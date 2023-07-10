@@ -19,6 +19,7 @@ class GameScene: SKScene {
         let background = Background.populateBackground(at: screenCenterPoint)
         background.size = self.size
         self.addChild(background)
+        
     }
     
 }
