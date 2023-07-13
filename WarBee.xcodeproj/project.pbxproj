@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD065FC72A6028A200902A32 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD065FC62A6028A200902A32 /* Cloud.swift */; };
 		AD6E49E22A5F0654004A7EE1 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E49E12A5F0654004A7EE1 /* Island.swift */; };
 		AD958E202A5C1F9400EFBA65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD958E1F2A5C1F9400EFBA65 /* AppDelegate.swift */; };
 		AD958E262A5C1F9400EFBA65 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD958E252A5C1F9400EFBA65 /* GameScene.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD065FC62A6028A200902A32 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		AD6E49E12A5F0654004A7EE1 /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
 		AD958E1C2A5C1F9400EFBA65 /* WarBee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarBee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD958E1F2A5C1F9400EFBA65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				AD958E252A5C1F9400EFBA65 /* GameScene.swift */,
 				AD958E362A5C44FA00EFBA65 /* Background.swift */,
 				AD6E49E12A5F0654004A7EE1 /* Island.swift */,
+				AD065FC62A6028A200902A32 /* Cloud.swift */,
 				AD958E272A5C1F9400EFBA65 /* GameViewController.swift */,
 				AD958E292A5C1F9400EFBA65 /* Main.storyboard */,
 				AD958E2C2A5C1F9500EFBA65 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD958E262A5C1F9400EFBA65 /* GameScene.swift in Sources */,
+				AD065FC72A6028A200902A32 /* Cloud.swift in Sources */,
 				AD958E282A5C1F9400EFBA65 /* GameViewController.swift in Sources */,
 				AD958E202A5C1F9400EFBA65 /* AppDelegate.swift in Sources */,
 				AD6E49E22A5F0654004A7EE1 /* Island.swift in Sources */,
