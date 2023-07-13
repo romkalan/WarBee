@@ -18,7 +18,7 @@ final class Cloud: SKSpriteNode, GameBackgroundSpriteable {
         let cloud = Cloud(imageNamed: cloudImage)
         cloud.setScale(randomScaleFactor)
         cloud.position = point
-        cloud.zPosition = 1
+        cloud.zPosition = 10
 
         return cloud
     }

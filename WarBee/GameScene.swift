@@ -32,8 +32,11 @@ class GameScene: SKScene {
                     upperBound: Int(screen.size.height)
                 )
             )
-            let island = Island.populateIsland(at: CGPoint(x: xPosition, y: yPosition))
+            let island = Island.populateSprite(at: CGPoint(x: xPosition, y: yPosition))
             self.addChild(island)
+            
+            let cloud = Cloud.populateSprite(at: CGPoint(x: xPosition, y: yPosition))
+            self.addChild(cloud)
             
         }
     }
