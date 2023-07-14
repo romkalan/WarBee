@@ -16,6 +16,8 @@
 		AD958E2D2A5C1F9500EFBA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD958E2C2A5C1F9500EFBA65 /* Assets.xcassets */; };
 		AD958E302A5C1F9500EFBA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD958E2E2A5C1F9500EFBA65 /* LaunchScreen.storyboard */; };
 		AD958E372A5C44FA00EFBA65 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD958E362A5C44FA00EFBA65 /* Background.swift */; };
+		ADEB2E882A613E0B002172BD /* PlayerPlane.atlas in Resources */ = {isa = PBXBuildFile; fileRef = ADEB2E872A613E0B002172BD /* PlayerPlane.atlas */; };
+		ADEB2E8A2A614E73002172BD /* PlayerPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEB2E892A614E73002172BD /* PlayerPlane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		AD958E2C2A5C1F9500EFBA65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD958E2F2A5C1F9500EFBA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD958E362A5C44FA00EFBA65 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		ADEB2E872A613E0B002172BD /* PlayerPlane.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PlayerPlane.atlas; sourceTree = "<group>"; };
+		ADEB2E892A614E73002172BD /* PlayerPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPlane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +67,12 @@
 			children = (
 				AD958E1F2A5C1F9400EFBA65 /* AppDelegate.swift */,
 				AD958E252A5C1F9400EFBA65 /* GameScene.swift */,
+				ADEB2E892A614E73002172BD /* PlayerPlane.swift */,
 				AD958E362A5C44FA00EFBA65 /* Background.swift */,
 				AD6E49E12A5F0654004A7EE1 /* Island.swift */,
 				AD065FC62A6028A200902A32 /* Cloud.swift */,
 				AD958E272A5C1F9400EFBA65 /* GameViewController.swift */,
+				ADEB2E872A613E0B002172BD /* PlayerPlane.atlas */,
 				AD958E292A5C1F9400EFBA65 /* Main.storyboard */,
 				AD958E2C2A5C1F9500EFBA65 /* Assets.xcassets */,
 				AD958E2E2A5C1F9500EFBA65 /* LaunchScreen.storyboard */,
@@ -133,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD958E2B2A5C1F9400EFBA65 /* Main.storyboard in Resources */,
+				ADEB2E882A613E0B002172BD /* PlayerPlane.atlas in Resources */,
 				AD958E2D2A5C1F9500EFBA65 /* Assets.xcassets in Resources */,
 				AD958E302A5C1F9500EFBA65 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -146,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD958E262A5C1F9400EFBA65 /* GameScene.swift in Sources */,
+				ADEB2E8A2A614E73002172BD /* PlayerPlane.swift in Sources */,
 				AD065FC72A6028A200902A32 /* Cloud.swift in Sources */,
 				AD958E282A5C1F9400EFBA65 /* GameViewController.swift in Sources */,
 				AD958E202A5C1F9400EFBA65 /* AppDelegate.swift in Sources */,
