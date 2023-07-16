@@ -21,6 +21,18 @@ final class Island: SKSpriteNode, GameBackgroundSpriteable {
         return island
     }
     
+    static func populate() -> Island {
+        let islandImage = configureName()
+        let island = Island(imageNamed: islandImage)
+        island.setScale(randomScaleFactor)
+        island.position = randomPoint()
+        island.zPosition = 1
+        island.run(rotateFromRandomAngle())
+        island.run(move(from: island.position))
+
+        return island
+    }
+    
     fileprivate static func configureName() -> String {
         let distribution = GKRandomDistribution(lowestValue: 1, highestValue: 4)
         let randomNumber = distribution.nextInt()

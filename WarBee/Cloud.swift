@@ -8,9 +8,6 @@
 import SpriteKit
 import GameplayKit
 
-protocol GameBackgroundSpriteable {
-    static func populateSprite(at point: CGPoint) -> Self
-}
 
 final class Cloud: SKSpriteNode, GameBackgroundSpriteable {
     static func populateSprite(at point: CGPoint) -> Cloud {
