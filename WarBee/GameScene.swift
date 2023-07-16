@@ -16,6 +16,21 @@ class GameScene: SKScene {
     var player: SKSpriteNode!
     
     override func didMove(to view: SKView) {
+        configureStartScene()
+    }
+    
+    override func didSimulatePhysics() {
+        super.didSimulatePhysics()
+        player.position.x += xAcceleration * 50
+        
+        if player.position.x < -70 {
+            player.position.x = self.size.width + 70
+        } else if player.position.x > self.size.width + 70 {
+            player.position.x = -70
+        }
+    }
+    
+    fileprivate func configureStartScene() {
         let screenCenterPoint = CGPoint(
             x: self.size.width / 2,
             y: self.size.height / 2
@@ -26,24 +41,24 @@ class GameScene: SKScene {
         self.addChild(background)
         
         let screen = UIScreen.main.bounds
-        for _ in 1...5 {
-            let xPosition = CGFloat(
-                GKRandomSource.sharedRandom().nextInt(
-                    upperBound: Int(screen.size.width)
-                )
-            )
-            let yPosition = CGFloat(
-                GKRandomSource.sharedRandom().nextInt(
-                    upperBound: Int(screen.size.height)
-                )
-            )
-            let island = Island.populateSprite(at: CGPoint(x: xPosition, y: yPosition))
-            self.addChild(island)
-            
-            let cloud = Cloud.populateSprite(at: CGPoint(x: xPosition, y: yPosition))
-            self.addChild(cloud)
-            
-        }
+       
+        let island1 = Island.populateSprite(at: CGPoint(x: 100, y: 200))
+        self.addChild(island1)
+        
+        let island2 = Island.populateSprite(at: CGPoint(
+            x: self.size.width - 100,
+            y: self.size.height - 200
+        ))
+        self.addChild(island2)
+        
+        let cloud1 = Cloud.populateSprite(at: CGPoint(x: 150, y: 150))
+        self.addChild(cloud1)
+        
+        let cloud2 = Cloud.populateSprite(at: CGPoint(
+            x: self.size.width - 150,
+            y: self.size.height - 200
+        ))
+        self.addChild(cloud2)
         
         player = PlayerPlane.populate(at: CGPoint(
             x: screen.size.width / 2,
@@ -59,15 +74,6 @@ class GameScene: SKScene {
         }
     }
     
-    override func didSimulatePhysics() {
-        super.didSimulatePhysics()
-        player.position.x += xAcceleration * 50
-        
-        if player.position.x < -70 {
-            player.position.x = self.size.width + 70
-        } else if player.position.x > self.size.width + 70 {
-            player.position.x = -70
-        }
-    }
+    
     
 }
