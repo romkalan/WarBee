@@ -17,6 +17,8 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         configureStartScene()
+        spawnClouds()
+        spawnIslands()
     }
     
     override func didSimulatePhysics() {
@@ -74,6 +76,34 @@ class GameScene: SKScene {
         }
     }
     
+    fileprivate func spawnClouds() {
+        let spawnCloudWait = SKAction.wait(forDuration: 1)
+        let spawnCloudAction = SKAction.run {
+            let cloud = Cloud.populate()
+            self.addChild(cloud)
+        }
+        
+        let spawnCloudSequence = SKAction.sequence([
+            spawnCloudWait,
+            spawnCloudAction
+        ])
+        let spawnCloudForever = SKAction.repeatForever(spawnCloudSequence)
+        run(spawnCloudForever)
+    }
     
+    fileprivate func spawnIslands() {
+        let spawnIslandWait = SKAction.wait(forDuration: 2)
+        let spawnIslandAction = SKAction.run {
+            let island = Island.populate()
+            self.addChild(island)
+        }
+        
+        let spawnIslandSequence = SKAction.sequence([
+            spawnIslandWait,
+            spawnIslandAction
+        ])
+        let spawnIslandForever = SKAction.repeatForever(spawnIslandSequence)
+        run(spawnIslandForever)
+    }
     
 }
