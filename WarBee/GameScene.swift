@@ -7,29 +7,21 @@
 
 import SpriteKit
 import GameplayKit
-import CoreMotion
 
 class GameScene: SKScene {
     
-    let motionManager = CMMotionManager()
-    var xAcceleration: CGFloat = 0
-    var player: SKSpriteNode!
+    var player: PlayerPlane!
     
     override func didMove(to view: SKView) {
         configureStartScene()
         spawnClouds()
         spawnIslands()
+        player.performFly()
     }
     
     override func didSimulatePhysics() {
         super.didSimulatePhysics()
-        player.position.x += xAcceleration * 50
-        
-        if player.position.x < -70 {
-            player.position.x = self.size.width + 70
-        } else if player.position.x > self.size.width + 70 {
-            player.position.x = -70
-        }
+        player.checkPosition()
         
         enumerateChildNodes(withName: "backgroundSprite") { (node, stop) in
             if node.position.y < -199 {
@@ -74,12 +66,6 @@ class GameScene: SKScene {
         )
         self.addChild(player)
         
-        motionManager.accelerometerUpdateInterval = 0.2
-        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
-            guard let data = data else { return }
-            let acceleration = data.acceleration
-            self.xAcceleration = CGFloat(acceleration.x) * 0.7 + self.xAcceleration * 0.3
-        }
     }
     
     //Spawn Background Objects methods
