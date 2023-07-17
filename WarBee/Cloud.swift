@@ -10,23 +10,13 @@ import GameplayKit
 
 
 final class Cloud: SKSpriteNode, GameBackgroundSpriteable {
-    static func populateSprite(at point: CGPoint) -> Cloud {
+    static func populateSprite(at point: CGPoint?) -> Cloud {
         let cloudImage = configureName()
         let cloud = Cloud(imageNamed: cloudImage)
         cloud.setScale(randomScaleFactor)
-        cloud.position = point
+        cloud.position = point ?? randomPoint()
         cloud.zPosition = 10
-        cloud.run(move(from: point))
-
-        return cloud
-    }
-    
-    static func populate() -> Cloud {
-        let cloudImage = configureName()
-        let cloud = Cloud(imageNamed: cloudImage)
-        cloud.setScale(randomScaleFactor)
-        cloud.position = randomPoint()
-        cloud.zPosition = 10
+        cloud.name = "backgroundSprite"
         cloud.run(move(from: cloud.position))
 
         return cloud
