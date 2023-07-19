@@ -11,12 +11,16 @@ import GameplayKit
 class GameScene: SKScene {
     
     var player: PlayerPlane!
+    let deadline = DispatchTime.now() + .nanoseconds(1)
     
     override func didMove(to view: SKView) {
         configureStartScene()
         spawnClouds()
         spawnIslands()
-        player.performFly()
+        
+        DispatchQueue.main.asyncAfter(deadline: deadline) { [unowned self] in
+            player.performFly()
+        }
         
         let powerUp = PowerUp()
         powerUp.performRotation()
