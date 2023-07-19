@@ -11,6 +11,7 @@
 		AD6E49E22A5F0654004A7EE1 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E49E12A5F0654004A7EE1 /* Island.swift */; };
 		AD7D12B82A6479DF002B4055 /* GameBackgroundSpriteable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D12B72A6479DF002B4055 /* GameBackgroundSpriteable.swift */; };
 		AD7D12BA2A67E85D002B4055 /* GreenPowerUp.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AD7D12B92A67E85C002B4055 /* GreenPowerUp.atlas */; };
+		AD7D12BC2A67F97C002B4055 /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D12BB2A67F97C002B4055 /* PowerUp.swift */; };
 		AD958E202A5C1F9400EFBA65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD958E1F2A5C1F9400EFBA65 /* AppDelegate.swift */; };
 		AD958E262A5C1F9400EFBA65 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD958E252A5C1F9400EFBA65 /* GameScene.swift */; };
 		AD958E282A5C1F9400EFBA65 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD958E272A5C1F9400EFBA65 /* GameViewController.swift */; };
@@ -27,6 +28,7 @@
 		AD6E49E12A5F0654004A7EE1 /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
 		AD7D12B72A6479DF002B4055 /* GameBackgroundSpriteable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundSpriteable.swift; sourceTree = "<group>"; };
 		AD7D12B92A67E85C002B4055 /* GreenPowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = GreenPowerUp.atlas; sourceTree = "<group>"; };
+		AD7D12BB2A67F97C002B4055 /* PowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUp.swift; sourceTree = "<group>"; };
 		AD958E1C2A5C1F9400EFBA65 /* WarBee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarBee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD958E1F2A5C1F9400EFBA65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD958E252A5C1F9400EFBA65 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				AD958E1F2A5C1F9400EFBA65 /* AppDelegate.swift */,
 				AD958E252A5C1F9400EFBA65 /* GameScene.swift */,
 				ADEB2E892A614E73002172BD /* PlayerPlane.swift */,
+				AD7D12BB2A67F97C002B4055 /* PowerUp.swift */,
 				AD958E362A5C44FA00EFBA65 /* Background.swift */,
 				AD6E49E12A5F0654004A7EE1 /* Island.swift */,
 				AD065FC62A6028A200902A32 /* Cloud.swift */,
@@ -166,6 +169,7 @@
 				AD958E202A5C1F9400EFBA65 /* AppDelegate.swift in Sources */,
 				AD6E49E22A5F0654004A7EE1 /* Island.swift in Sources */,
 				AD7D12B82A6479DF002B4055 /* GameBackgroundSpriteable.swift in Sources */,
+				AD7D12BC2A67F97C002B4055 /* PowerUp.swift in Sources */,
 				AD958E372A5C44FA00EFBA65 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
