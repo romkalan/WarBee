@@ -19,22 +19,12 @@ class GameScene: SKScene {
         spawnIslands()
         
         DispatchQueue.main.asyncAfter(deadline: deadline) { [unowned self] in
-            player.performFly()
+            self.player.performFly()
         }
         
-        let powerUp = PowerUp()
-        powerUp.performRotation()
-        powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-        self.addChild(powerUp)
+        spawnPowerUp()
+        spawnSpiralOfEnemies()
         
-        let textureAtlas = SKTextureAtlas(named: "Enemy_1")
-        SKTextureAtlas.preloadTextureAtlases([textureAtlas]) {
-            Enemy.textureAtlas = textureAtlas
-            let enemy = Enemy()
-            enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 120)
-            self.addChild(enemy)
-            enemy.flySpiral()
-        }
     }
     
     override func didSimulatePhysics() {
@@ -45,6 +35,24 @@ class GameScene: SKScene {
             if node.position.y < -199 {
                 node.removeFromParent()
             }
+        }
+    }
+    
+    fileprivate func spawnPowerUp() {
+        let powerUp = PowerUp()
+        powerUp.performRotation()
+        powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        self.addChild(powerUp)
+    }
+    
+    fileprivate func spawnSpiralOfEnemies() {
+        let textureAtlas = SKTextureAtlas(named: "Enemy_1")
+        SKTextureAtlas.preloadTextureAtlases([textureAtlas]) {
+            Enemy.textureAtlas = textureAtlas
+            let enemy = Enemy()
+            enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 120)
+            self.addChild(enemy)
+            enemy.flySpiral()
         }
     }
     
