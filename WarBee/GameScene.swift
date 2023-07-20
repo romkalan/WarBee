@@ -31,13 +31,14 @@ class GameScene: SKScene {
         super.didSimulatePhysics()
         player.checkPosition()
         
-        enumerateChildNodes(withName: "backgroundSprite") { (node, stop) in
+        enumerateChildNodes(withName: "sprite") { (node, stop) in
             if node.position.y < -199 {
                 node.removeFromParent()
             }
         }
     }
     
+    //Spawn powerUp for player
     fileprivate func spawnPowerUp() {
         let powerUp = PowerUp()
         powerUp.performRotation()
@@ -45,6 +46,7 @@ class GameScene: SKScene {
         self.addChild(powerUp)
     }
     
+    // Spawn Enemies
     fileprivate func spawnSpiralOfEnemies() {
         let textureAtlas = SKTextureAtlas(named: "Enemy_1")
         SKTextureAtlas.preloadTextureAtlases([textureAtlas]) {
@@ -55,7 +57,7 @@ class GameScene: SKScene {
             enemy.flySpiral()
         }
     }
-    
+    // initial settings for scene
     fileprivate func configureStartScene() {
         let screenCenterPoint = CGPoint(
             x: self.size.width / 2,
