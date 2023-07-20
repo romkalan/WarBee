@@ -23,7 +23,7 @@ class GameScene: SKScene {
         }
         
         spawnPowerUp()
-        spawnSpiralOfEnemies()
+        spawnEnemy(count: 5)
         
     }
     
@@ -32,7 +32,7 @@ class GameScene: SKScene {
         player.checkPosition()
         
         enumerateChildNodes(withName: "sprite") { (node, stop) in
-            if node.position.y < -199 {
+            if node.position.y < -100 {
                 node.removeFromParent()
             }
         }
@@ -47,14 +47,20 @@ class GameScene: SKScene {
     }
     
     // Spawn Enemies
-    fileprivate func spawnSpiralOfEnemies() {
+    fileprivate func spawnEnemy(count: Int) {
         let textureAtlas = SKTextureAtlas(named: "Enemy_1")
         SKTextureAtlas.preloadTextureAtlases([textureAtlas]) {
             Enemy.textureAtlas = textureAtlas
-            let enemy = Enemy()
-            enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 120)
-            self.addChild(enemy)
-            enemy.flySpiral()
+            let waitAction = SKAction.wait(forDuration: 1.0)
+            let spawnEnemy = SKAction.run {
+                let enemy = Enemy()
+                enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 120)
+                self.addChild(enemy)
+                enemy.flySpiral()
+            }
+            let spawnAction = SKAction.sequence([waitAction, spawnEnemy])
+            let repeatAction = SKAction.repeat(spawnAction, count: count)
+            self.run(repeatAction)
         }
     }
     // initial settings for scene
