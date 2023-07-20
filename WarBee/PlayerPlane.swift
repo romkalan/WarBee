@@ -92,49 +92,49 @@ class PlayerPlane: SKSpriteNode {
         
     }
     
-    fileprivate func planeAnimationFillArray() {
-        SKTextureAtlas.preloadTextureAtlases([SKTextureAtlas(named: "PlayerPlane")]) {
-            
-            self.leftTextureArrayAnimation = {
-                var array = [SKTexture]()
-                for i in stride(from: 13, through: 1, by: -1) {
-                    let number = String(format: "%02d", i)
-                    let texture = SKTexture(imageNamed: "airplane_3ver2_\(number)")
-                    array.append(texture)
-                }
-                SKTexture.preload(array, withCompletionHandler: {
-                    print("preload is done")
-                })
-                return array
-            }()
-            
-            self.rightTextureArrayAnimation = {
-                var array = [SKTexture]()
-                for i in stride(from: 13, through: 26, by: 1) {
-                    let number = String(format: "%02d", i)
-                    let texture = SKTexture(imageNamed: "airplane_3ver2_\(number)")
-                    array.append(texture)
-                }
-                
-                SKTexture.preload(array, withCompletionHandler: {
-                    print("preload is done")
-                })
-                return array
-            }()
-            
-            self.forwardTextureArrayAnimation = {
-                var array = [SKTexture]()
-                let texture = SKTexture(imageNamed: "airplane_3ver2_13")
-                array.append(texture)
-                
-                SKTexture.preload(array, withCompletionHandler: {
-                    print("preload is done")
-                })
-                return array
-            }()
-            
-        }
-    }
+//    fileprivate func planeAnimationFillArray() {
+//        SKTextureAtlas.preloadTextureAtlases([SKTextureAtlas(named: "PlayerPlane")]) {
+//
+//            self.leftTextureArrayAnimation = {
+//                var array = [SKTexture]()
+//                for i in stride(from: 13, through: 1, by: -1) {
+//                    let number = String(format: "%02d", i)
+//                    let texture = SKTexture(imageNamed: "airplane_3ver2_\(number)")
+//                    array.append(texture)
+//                }
+//                SKTexture.preload(array, withCompletionHandler: {
+//                    print("preload is done")
+//                })
+//                return array
+//            }()
+//
+//            self.rightTextureArrayAnimation = {
+//                var array = [SKTexture]()
+//                for i in stride(from: 13, through: 26, by: 1) {
+//                    let number = String(format: "%02d", i)
+//                    let texture = SKTexture(imageNamed: "airplane_3ver2_\(number)")
+//                    array.append(texture)
+//                }
+//
+//                SKTexture.preload(array, withCompletionHandler: {
+//                    print("preload is done")
+//                })
+//                return array
+//            }()
+//
+//            self.forwardTextureArrayAnimation = {
+//                var array = [SKTexture]()
+//                let texture = SKTexture(imageNamed: "airplane_3ver2_13")
+//                array.append(texture)
+//
+//                SKTexture.preload(array, withCompletionHandler: {
+//                    print("preload is done")
+//                })
+//                return array
+//            }()
+//
+//        }
+//    }
     
     fileprivate func movementDirectionCheck() {
         if xAcceleration > 0.02, moveDirection != .right, stillTurning == false {
