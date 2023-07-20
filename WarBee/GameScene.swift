@@ -26,6 +26,14 @@ class GameScene: SKScene {
         powerUp.performRotation()
         powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         self.addChild(powerUp)
+        
+        let textureAtlas = SKTextureAtlas(named: "Enemy_1")
+        SKTextureAtlas.preloadTextureAtlases([textureAtlas]) {
+            Enemy.textureAtlas = textureAtlas
+            let enemy = Enemy()
+            enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height * 2 / 3)
+            self.addChild(enemy)
+        }
     }
     
     override func didSimulatePhysics() {
