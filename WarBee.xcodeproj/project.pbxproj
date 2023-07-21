@@ -85,6 +85,22 @@
 			path = Background;
 			sourceTree = "<group>";
 		};
+		AD28741D2A6AE7FD00CC1A3A /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				ADEB2E892A614E73002172BD /* PlayerPlane.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		AD28741E2A6AE80600CC1A3A /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				AD5620382A6913B400D76ED5 /* Enemy.swift */,
+			);
+			path = Enemies;
+			sourceTree = "<group>";
+		};
 		AD958E132A5C1F9400EFBA65 = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +122,8 @@
 			children = (
 				AD958E1F2A5C1F9400EFBA65 /* AppDelegate.swift */,
 				AD958E252A5C1F9400EFBA65 /* GameScene.swift */,
-				ADEB2E892A614E73002172BD /* PlayerPlane.swift */,
-				AD5620382A6913B400D76ED5 /* Enemy.swift */,
+				AD28741D2A6AE7FD00CC1A3A /* Player */,
+				AD28741E2A6AE80600CC1A3A /* Enemies */,
 				AD28741B2A6AE70D00CC1A3A /* PowerUp */,
 				AD28741C2A6AE73500CC1A3A /* Background */,
 				AD958E272A5C1F9400EFBA65 /* GameViewController.swift */,
