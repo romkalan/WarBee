@@ -21,11 +21,18 @@ class PowerUp: SKSpriteNode {
         
         super.init(texture: texture, color: .clear, size: initialSize)
         self.setScale(0.7)
-        self.name = "powerUp"
+        self.name = "sprite"
         self.zPosition = 20
     }
     
-    func performRotation() {
+    func startMovement() {
+        performRotation()
+        
+        let moveForward = SKAction.moveTo(y: -100, duration: 5)
+        self.run(moveForward)
+    }
+    
+    fileprivate func performRotation() {
         for i in 1...15 {
             let number = String(format: "%02d", i)
             animationSpriteArray.append(SKTexture(imageNamed: textureNameBeginsWith + number.description))
