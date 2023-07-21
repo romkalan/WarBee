@@ -22,6 +22,7 @@
 		AD958E302A5C1F9500EFBA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD958E2E2A5C1F9500EFBA65 /* LaunchScreen.storyboard */; };
 		AD958E372A5C44FA00EFBA65 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD958E362A5C44FA00EFBA65 /* Background.swift */; };
 		ADCBEF672A6A65CE00373BD7 /* Enemy_2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = ADCBEF662A6A65CE00373BD7 /* Enemy_2.atlas */; };
+		ADCBEF692A6A81BA00373BD7 /* BluePowerUp.atlas in Resources */ = {isa = PBXBuildFile; fileRef = ADCBEF682A6A81BA00373BD7 /* BluePowerUp.atlas */; };
 		ADEB2E882A613E0B002172BD /* PlayerPlane.atlas in Resources */ = {isa = PBXBuildFile; fileRef = ADEB2E872A613E0B002172BD /* PlayerPlane.atlas */; };
 		ADEB2E8A2A614E73002172BD /* PlayerPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEB2E892A614E73002172BD /* PlayerPlane.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		AD958E2F2A5C1F9500EFBA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD958E362A5C44FA00EFBA65 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		ADCBEF662A6A65CE00373BD7 /* Enemy_2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_2.atlas; sourceTree = "<group>"; };
+		ADCBEF682A6A81BA00373BD7 /* BluePowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BluePowerUp.atlas; sourceTree = "<group>"; };
 		ADEB2E872A613E0B002172BD /* PlayerPlane.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PlayerPlane.atlas; sourceTree = "<group>"; };
 		ADEB2E892A614E73002172BD /* PlayerPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPlane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 				AD5620362A6913A200D76ED5 /* Enemy_1.atlas */,
 				ADCBEF662A6A65CE00373BD7 /* Enemy_2.atlas */,
 				AD7D12B92A67E85C002B4055 /* GreenPowerUp.atlas */,
+				ADCBEF682A6A81BA00373BD7 /* BluePowerUp.atlas */,
 				ADEB2E872A613E0B002172BD /* PlayerPlane.atlas */,
 				AD958E292A5C1F9400EFBA65 /* Main.storyboard */,
 				AD958E2C2A5C1F9500EFBA65 /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 				AD7D12BA2A67E85D002B4055 /* GreenPowerUp.atlas in Resources */,
 				ADEB2E882A613E0B002172BD /* PlayerPlane.atlas in Resources */,
 				AD958E2D2A5C1F9500EFBA65 /* Assets.xcassets in Resources */,
+				ADCBEF692A6A81BA00373BD7 /* BluePowerUp.atlas in Resources */,
 				AD958E302A5C1F9500EFBA65 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
