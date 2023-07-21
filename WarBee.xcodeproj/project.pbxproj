@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD065FC72A6028A200902A32 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD065FC62A6028A200902A32 /* Cloud.swift */; };
+		AD2874182A6AE53200CC1A3A /* GreenPowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2874172A6AE53200CC1A3A /* GreenPowerUp.swift */; };
+		AD28741A2A6AE59500CC1A3A /* BluePowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2874192A6AE59500CC1A3A /* BluePowerUp.swift */; };
 		AD5620372A6913A200D76ED5 /* Enemy_1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AD5620362A6913A200D76ED5 /* Enemy_1.atlas */; };
 		AD5620392A6913B400D76ED5 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5620382A6913B400D76ED5 /* Enemy.swift */; };
 		AD6E49E22A5F0654004A7EE1 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E49E12A5F0654004A7EE1 /* Island.swift */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		AD065FC62A6028A200902A32 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		AD2874172A6AE53200CC1A3A /* GreenPowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenPowerUp.swift; sourceTree = "<group>"; };
+		AD2874192A6AE59500CC1A3A /* BluePowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluePowerUp.swift; sourceTree = "<group>"; };
 		AD5620362A6913A200D76ED5 /* Enemy_1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_1.atlas; sourceTree = "<group>"; };
 		AD5620382A6913B400D76ED5 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		AD6E49E12A5F0654004A7EE1 /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
@@ -60,6 +64,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD28741B2A6AE70D00CC1A3A /* PowerUp */ = {
+			isa = PBXGroup;
+			children = (
+				AD7D12BB2A67F97C002B4055 /* PowerUp.swift */,
+				AD2874172A6AE53200CC1A3A /* GreenPowerUp.swift */,
+				AD2874192A6AE59500CC1A3A /* BluePowerUp.swift */,
+			);
+			path = PowerUp;
+			sourceTree = "<group>";
+		};
+		AD28741C2A6AE73500CC1A3A /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				AD7D12B72A6479DF002B4055 /* GameBackgroundSpriteable.swift */,
+				AD958E362A5C44FA00EFBA65 /* Background.swift */,
+				AD6E49E12A5F0654004A7EE1 /* Island.swift */,
+				AD065FC62A6028A200902A32 /* Cloud.swift */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
 		AD958E132A5C1F9400EFBA65 = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +108,8 @@
 				AD958E252A5C1F9400EFBA65 /* GameScene.swift */,
 				ADEB2E892A614E73002172BD /* PlayerPlane.swift */,
 				AD5620382A6913B400D76ED5 /* Enemy.swift */,
-				AD7D12BB2A67F97C002B4055 /* PowerUp.swift */,
-				AD958E362A5C44FA00EFBA65 /* Background.swift */,
-				AD6E49E12A5F0654004A7EE1 /* Island.swift */,
-				AD065FC62A6028A200902A32 /* Cloud.swift */,
-				AD7D12B72A6479DF002B4055 /* GameBackgroundSpriteable.swift */,
+				AD28741B2A6AE70D00CC1A3A /* PowerUp */,
+				AD28741C2A6AE73500CC1A3A /* Background */,
 				AD958E272A5C1F9400EFBA65 /* GameViewController.swift */,
 				AD5620362A6913A200D76ED5 /* Enemy_1.atlas */,
 				ADCBEF662A6A65CE00373BD7 /* Enemy_2.atlas */,
@@ -181,11 +203,13 @@
 				ADEB2E8A2A614E73002172BD /* PlayerPlane.swift in Sources */,
 				AD065FC72A6028A200902A32 /* Cloud.swift in Sources */,
 				AD958E282A5C1F9400EFBA65 /* GameViewController.swift in Sources */,
+				AD2874182A6AE53200CC1A3A /* GreenPowerUp.swift in Sources */,
 				AD958E202A5C1F9400EFBA65 /* AppDelegate.swift in Sources */,
 				AD6E49E22A5F0654004A7EE1 /* Island.swift in Sources */,
 				AD5620392A6913B400D76ED5 /* Enemy.swift in Sources */,
 				AD7D12B82A6479DF002B4055 /* GameBackgroundSpriteable.swift in Sources */,
 				AD7D12BC2A67F97C002B4055 /* PowerUp.swift in Sources */,
+				AD28741A2A6AE59500CC1A3A /* BluePowerUp.swift in Sources */,
 				AD958E372A5C44FA00EFBA65 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

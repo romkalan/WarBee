@@ -40,7 +40,7 @@ class GameScene: SKScene {
     
     //Spawn powerUp for player
     fileprivate func spawnPowerUp() {
-        let powerUp = PowerUp()
+        let powerUp = BluePowerUp()
         powerUp.performRotation()
         powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         self.addChild(powerUp)
