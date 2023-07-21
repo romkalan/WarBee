@@ -9,8 +9,9 @@ import SpriteKit
 
 class Enemy: SKSpriteNode {
     static var textureAtlas: SKTextureAtlas?
+    var enemyTexture: SKTexture!
     
-    init() {
+    init(enemyTexture: SKTexture) {
         let texture = Enemy.textureAtlas?.textureNamed("airplane_4ver2_13")
         super.init(
             texture: texture,
@@ -36,7 +37,10 @@ class Enemy: SKSpriteNode {
         
         let forwardMovement = SKAction.moveTo(y: -120, duration: timeVertical)
         
-        let asideMovementSequence = SKAction.sequence([moveLeft, moveRight])
+        let randomNumber = Int(arc4random_uniform(2))
+        let asideMovementSequence = randomNumber == EnemyDirection.left.rawValue
+            ? SKAction.sequence([moveLeft, moveRight])
+            : SKAction.sequence([moveRight, moveLeft])
         let foreverAsideMovement = SKAction.repeatForever(asideMovementSequence)
         
         let groupMovement = SKAction.group([foreverAsideMovement, forwardMovement])
@@ -46,4 +50,9 @@ class Enemy: SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+enum EnemyDirection: Int {
+    case left = 0
+    case right
 }

@@ -23,7 +23,8 @@ class GameScene: SKScene {
         }
         
         spawnPowerUp()
-        spawnEnemy(count: 5)
+//        spawnEnemy(count: 5)
+        spawnEnemies()
         
     }
     
@@ -47,13 +48,22 @@ class GameScene: SKScene {
     }
     
     // Spawn Enemies
+    
+    fileprivate func spawnEnemies() {
+        let waitAction = SKAction.wait(forDuration: 3)
+        let spawnSpiralAction = SKAction.run { [unowned self] in
+            self.spawnEnemy(count: 5)
+        }
+        self.run(SKAction.repeatForever(SKAction.sequence([waitAction, spawnSpiralAction])))
+    }
+    
     fileprivate func spawnEnemy(count: Int) {
         let textureAtlas = SKTextureAtlas(named: "Enemy_1")
         SKTextureAtlas.preloadTextureAtlases([textureAtlas]) {
             Enemy.textureAtlas = textureAtlas
             let waitAction = SKAction.wait(forDuration: 1.0)
             let spawnEnemy = SKAction.run {
-                let enemy = Enemy()
+                let enemy = Enemy(enemyTexture: textureAtlas.textureNamed("airplane_4ver2_13"))
                 enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 120)
                 self.addChild(enemy)
                 enemy.flySpiral()
