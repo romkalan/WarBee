@@ -23,7 +23,6 @@ class GameScene: SKScene {
         }
         
         spawnPowerUp()
-//        spawnEnemy(count: 5)
         spawnEnemies()
         
     }
@@ -52,24 +51,32 @@ class GameScene: SKScene {
     fileprivate func spawnEnemies() {
         let waitAction = SKAction.wait(forDuration: 3)
         let spawnSpiralAction = SKAction.run { [unowned self] in
-            self.spawnEnemy(count: 5)
+            self.spawnEnemy(count: 3)
         }
         self.run(SKAction.repeatForever(SKAction.sequence([waitAction, spawnSpiralAction])))
     }
     
     fileprivate func spawnEnemy(count: Int) {
-        let textureAtlas = SKTextureAtlas(named: "Enemy_1")
-        SKTextureAtlas.preloadTextureAtlases([textureAtlas]) {
-            Enemy.textureAtlas = textureAtlas
+        let enemyTextureAtlas1 = SKTextureAtlas(named: "Enemy_1")
+        let enemyTextureAtlas2 = SKTextureAtlas(named: "Enemy_2")
+        SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2]) { [unowned self] in
+            
+            let randomNumber = Int(arc4random_uniform(2))
+            let arrayOfAtlases = [enemyTextureAtlas1, enemyTextureAtlas2]
+            let textureAtlas = arrayOfAtlases[randomNumber]
+            
             let waitAction = SKAction.wait(forDuration: 1.0)
-            let spawnEnemy = SKAction.run {
-                let enemy = Enemy(enemyTexture: textureAtlas.textureNamed("airplane_4ver2_13"))
-                enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 120)
+            let spawnEnemy = SKAction.run({ [unowned self] in
+                let textureNames = textureAtlas.textureNames.sorted()
+                let texture = textureAtlas.textureNamed(textureNames[12])
+                let enemy = Enemy(enemyTexture: texture)
+                enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 110)
                 self.addChild(enemy)
                 enemy.flySpiral()
-            }
+            })
+            
             let spawnAction = SKAction.sequence([waitAction, spawnEnemy])
-            let repeatAction = SKAction.repeat(spawnAction, count: count)
+            let repeatAction = SKAction.repeat(spawnAction, count: 3)
             self.run(repeatAction)
         }
     }

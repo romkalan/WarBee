@@ -12,7 +12,7 @@ class Enemy: SKSpriteNode {
     var enemyTexture: SKTexture!
     
     init(enemyTexture: SKTexture) {
-        let texture = Enemy.textureAtlas?.textureNamed("airplane_4ver2_13")
+        let texture = enemyTexture
         super.init(
             texture: texture,
             color: .clear,
@@ -26,7 +26,7 @@ class Enemy: SKSpriteNode {
     
     func flySpiral() {
         let timeHorizontal: Double = 3
-        let timeVertical: Double = 10
+        let timeVertical: Double = 5
         let screenSize = UIScreen.main.bounds
         
         let moveLeft = SKAction.moveTo(x: 50, duration: timeHorizontal)
@@ -54,5 +54,5 @@ class Enemy: SKSpriteNode {
 
 enum EnemyDirection: Int {
     case left = 0
-    case right
+    case right = 1
 }
