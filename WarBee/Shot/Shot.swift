@@ -21,7 +21,7 @@ class Shot: SKSpriteNode {
         textureNameBeginsWith = String(textureName.dropLast(6))
         
         super.init(texture: texture, color: .clear, size: initialSize)
-        self.setScale(0.7)
+        self.setScale(0.3)
         self.name = "shotSprite"
         self.zPosition = 30
     }
