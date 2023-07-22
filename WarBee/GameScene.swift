@@ -36,6 +36,17 @@ class GameScene: SKScene {
                 node.removeFromParent()
             }
         }
+        
+        enumerateChildNodes(withName: "shotSprite") { (node, stop) in
+            if node.position.y <= self.size.height + 100 {
+                node.removeFromParent()
+            }
+        }
+    }
+    
+    //Spawn playerFire
+    fileprivate func playerFire() {
+        
     }
     
     //Spawn powerUp for player
