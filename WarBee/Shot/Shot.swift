@@ -8,6 +8,7 @@
 import SpriteKit
 
 class Shot: SKSpriteNode {
+    private let screenSize = UIScreen.main.bounds
     private let initialSize = CGSize(width: 187, height: 237)
     private var textureAtlas: SKTextureAtlas!
     private var textureNameBeginsWith = ""
@@ -28,12 +29,12 @@ class Shot: SKSpriteNode {
     func startMovement() {
         performRotation()
         
-        let moveForward = SKAction.moveTo(y: -100, duration: 5)
+        let moveForward = SKAction.moveTo(y: screenSize.height + 100, duration: 2)
         self.run(moveForward)
     }
     
     fileprivate func performRotation() {
-        for i in 1...15 {
+        for i in 1...32 {
             let number = String(format: "%02d", i)
             animationSpriteArray.append(SKTexture(imageNamed: textureNameBeginsWith + number.description))
         }

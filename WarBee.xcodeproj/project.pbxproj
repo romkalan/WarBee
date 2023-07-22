@@ -116,6 +116,19 @@
 			path = Shot;
 			sourceTree = "<group>";
 		};
+		AD2874262A6C44EF00CC1A3A /* Atlases */ = {
+			isa = PBXGroup;
+			children = (
+				AD5620362A6913A200D76ED5 /* Enemy_1.atlas */,
+				ADCBEF662A6A65CE00373BD7 /* Enemy_2.atlas */,
+				AD7D12B92A67E85C002B4055 /* GreenPowerUp.atlas */,
+				ADCBEF682A6A81BA00373BD7 /* BluePowerUp.atlas */,
+				ADEB2E872A613E0B002172BD /* PlayerPlane.atlas */,
+				AD28741F2A6BD4A900CC1A3A /* YellowAmmo.atlas */,
+			);
+			path = Atlases;
+			sourceTree = "<group>";
+		};
 		AD958E132A5C1F9400EFBA65 = {
 			isa = PBXGroup;
 			children = (
@@ -145,12 +158,7 @@
 				AD958E272A5C1F9400EFBA65 /* GameViewController.swift */,
 				AD958E292A5C1F9400EFBA65 /* Main.storyboard */,
 				AD958E2E2A5C1F9500EFBA65 /* LaunchScreen.storyboard */,
-				AD5620362A6913A200D76ED5 /* Enemy_1.atlas */,
-				ADCBEF662A6A65CE00373BD7 /* Enemy_2.atlas */,
-				AD7D12B92A67E85C002B4055 /* GreenPowerUp.atlas */,
-				ADCBEF682A6A81BA00373BD7 /* BluePowerUp.atlas */,
-				ADEB2E872A613E0B002172BD /* PlayerPlane.atlas */,
-				AD28741F2A6BD4A900CC1A3A /* YellowAmmo.atlas */,
+				AD2874262A6C44EF00CC1A3A /* Atlases */,
 				AD958E2C2A5C1F9500EFBA65 /* Assets.xcassets */,
 			);
 			path = WarBee;
