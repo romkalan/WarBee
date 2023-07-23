@@ -14,6 +14,9 @@ class GameScene: SKScene {
     let deadline = DispatchTime.now() + .nanoseconds(1)
     
     override func didMove(to view: SKView) {
+        physicsWorld.contactDelegate = self
+        physicsWorld.gravity = CGVector.zero
+        
         configureStartScene()
         spawnClouds()
         spawnIslands()
@@ -24,7 +27,6 @@ class GameScene: SKScene {
         
         spawnPowerUp()
         spawnEnemies()
-        
     }
     
     override func didSimulatePhysics() {
@@ -179,4 +181,14 @@ class GameScene: SKScene {
         run(spawnIslandForever)
     }
     
+}
+
+extension GameScene: SKPhysicsContactDelegate {
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        print("contact detected")
+    }
+    func didEnd(_ contact: SKPhysicsContact) {
+        
+    }
 }

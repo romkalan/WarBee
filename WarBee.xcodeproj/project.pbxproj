@@ -15,6 +15,7 @@
 		AD2874252A6C443200CC1A3A /* YellowShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2874242A6C443200CC1A3A /* YellowShot.swift */; };
 		AD2874282A6C504C00CC1A3A /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2874272A6C504C00CC1A3A /* Assets.swift */; };
 		AD28742A2A6D1A8D00CC1A3A /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2874292A6D1A8D00CC1A3A /* MenuScene.swift */; };
+		AD28742C2A6D7DD000CC1A3A /* BitMaskCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD28742B2A6D7DD000CC1A3A /* BitMaskCategory.swift */; };
 		AD5620372A6913A200D76ED5 /* Enemy_1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AD5620362A6913A200D76ED5 /* Enemy_1.atlas */; };
 		AD5620392A6913B400D76ED5 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5620382A6913B400D76ED5 /* Enemy.swift */; };
 		AD6E49E22A5F0654004A7EE1 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E49E12A5F0654004A7EE1 /* Island.swift */; };
@@ -43,6 +44,7 @@
 		AD2874242A6C443200CC1A3A /* YellowShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowShot.swift; sourceTree = "<group>"; };
 		AD2874272A6C504C00CC1A3A /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		AD2874292A6D1A8D00CC1A3A /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		AD28742B2A6D7DD000CC1A3A /* BitMaskCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMaskCategory.swift; sourceTree = "<group>"; };
 		AD5620362A6913A200D76ED5 /* Enemy_1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_1.atlas; sourceTree = "<group>"; };
 		AD5620382A6913B400D76ED5 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		AD6E49E12A5F0654004A7EE1 /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
@@ -133,6 +135,22 @@
 			path = Atlases;
 			sourceTree = "<group>";
 		};
+		AD28742D2A6D7E1300CC1A3A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AD28742B2A6D7DD000CC1A3A /* BitMaskCategory.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AD28742E2A6D7E1F00CC1A3A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD958E272A5C1F9400EFBA65 /* GameViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		AD958E132A5C1F9400EFBA65 = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +179,8 @@
 				AD28741C2A6AE73500CC1A3A /* Background */,
 				AD2874232A6C441B00CC1A3A /* Shot */,
 				AD2874272A6C504C00CC1A3A /* Assets.swift */,
-				AD958E272A5C1F9400EFBA65 /* GameViewController.swift */,
+				AD28742D2A6D7E1300CC1A3A /* Services */,
+				AD28742E2A6D7E1F00CC1A3A /* ViewControllers */,
 				AD958E292A5C1F9400EFBA65 /* Main.storyboard */,
 				AD958E2E2A5C1F9500EFBA65 /* LaunchScreen.storyboard */,
 				AD2874262A6C44EF00CC1A3A /* Atlases */,
@@ -260,6 +279,7 @@
 				AD7D12B82A6479DF002B4055 /* GameBackgroundSpriteable.swift in Sources */,
 				AD7D12BC2A67F97C002B4055 /* PowerUp.swift in Sources */,
 				AD28741A2A6AE59500CC1A3A /* BluePowerUp.swift in Sources */,
+				AD28742C2A6D7DD000CC1A3A /* BitMaskCategory.swift in Sources */,
 				AD28742A2A6D1A8D00CC1A3A /* MenuScene.swift in Sources */,
 				AD2874222A6C407B00CC1A3A /* Shot.swift in Sources */,
 				AD958E372A5C44FA00EFBA65 /* Background.swift in Sources */,
