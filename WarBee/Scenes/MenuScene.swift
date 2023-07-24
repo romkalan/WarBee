@@ -22,7 +22,7 @@ class MenuScene: SKScene {
         guard let location = touches.first?.location(in: self) else { return }
         let node = self.atPoint(location)
         
-        if node.name == "runButton" {
+        if node.name == "play" {
             let transition = SKTransition.crossFade(withDuration: 1.0)
             let gameScene = GameScene(size: self.size)
             gameScene.scaleMode = .aspectFill
@@ -31,10 +31,18 @@ class MenuScene: SKScene {
     }
     
     fileprivate func createButton() {
-        let texture = SKTexture(imageNamed: "play")
-        let button = SKSpriteNode(texture: texture)
-        button.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-        button.name = "runButton"
-        self.addChild(button)
+        let header = SKSpriteNode(imageNamed: "header1")
+        header.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 150)
+        self.addChild(header)
+        
+        let titles = ["play", "options", "best"]
+        
+        for (index, title) in titles.enumerated() {
+            let button = ButtonNode(titled: title, backgroundName: "button_background")
+            button.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(100 * index))
+            button.name = title
+            button.label.name = title
+            addChild(button)
+        }
     }
 }
