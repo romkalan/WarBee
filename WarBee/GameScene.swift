@@ -13,6 +13,13 @@ class GameScene: SKScene {
     var player: PlayerPlane!
     let deadline = DispatchTime.now() + .nanoseconds(1)
     
+    let scoreBackground = SKSpriteNode(imageNamed: "scores")
+    let scoreLabel = SKLabelNode(text: "1000")
+    let menuButton = SKSpriteNode(imageNamed: "menu")
+    let life1 = SKSpriteNode(imageNamed: "life")
+    let life2 = SKSpriteNode(imageNamed: "life")
+    let life3 = SKSpriteNode(imageNamed: "life")
+    
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector.zero
@@ -23,6 +30,8 @@ class GameScene: SKScene {
         player.performFly()
         spawnPowerUp()
         spawnEnemies()
+        
+        configureUI()
     }
     
     override func didSimulatePhysics() {
@@ -44,6 +53,17 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         playerFire()
+    }
+    
+    // Configure User Interface
+    fileprivate func configureUI() {
+        scoreBackground.position = CGPoint(
+            x: scoreBackground.size.width + 10,
+            y: self.size.height - scoreBackground.size.height / 2 - 40
+        )
+        scoreBackground.anchorPoint = CGPoint(x: 1.0, y: 0.5)
+        scoreBackground.zPosition = 99
+        self.addChild(scoreBackground)
     }
     
     //Spawn playerFire
