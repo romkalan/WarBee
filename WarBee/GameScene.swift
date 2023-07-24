@@ -20,11 +20,7 @@ class GameScene: SKScene {
         configureStartScene()
         spawnClouds()
         spawnIslands()
-        
-        DispatchQueue.main.asyncAfter(deadline: deadline) { [unowned self] in
-            self.player.performFly()
-        }
-        
+        player.performFly()
         spawnPowerUp()
         spawnEnemies()
     }
