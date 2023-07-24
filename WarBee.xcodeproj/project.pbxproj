@@ -91,7 +91,6 @@
 		AD28741C2A6AE73500CC1A3A /* Background */ = {
 			isa = PBXGroup;
 			children = (
-				AD7D12B72A6479DF002B4055 /* GameBackgroundSpriteable.swift */,
 				AD958E362A5C44FA00EFBA65 /* Background.swift */,
 				AD6E49E12A5F0654004A7EE1 /* Island.swift */,
 				AD065FC62A6028A200902A32 /* Cloud.swift */,
@@ -140,6 +139,7 @@
 		AD28742D2A6D7E1300CC1A3A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AD2874272A6C504C00CC1A3A /* Assets.swift */,
 				AD28742B2A6D7DD000CC1A3A /* BitMaskCategory.swift */,
 			);
 			path = Services;
@@ -156,11 +156,42 @@
 		AD2874312A6E9E9600CC1A3A /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				AD958E1F2A5C1F9400EFBA65 /* AppDelegate.swift */,
 				AD958E292A5C1F9400EFBA65 /* Main.storyboard */,
 				AD958E2E2A5C1F9500EFBA65 /* LaunchScreen.storyboard */,
 				AD958E2C2A5C1F9500EFBA65 /* Assets.xcassets */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		AD2874322A6E9EF600CC1A3A /* Protocols + Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD7D12B72A6479DF002B4055 /* GameBackgroundSpriteable.swift */,
+			);
+			path = "Protocols + Extensions";
+			sourceTree = "<group>";
+		};
+		AD2874332A6E9F3500CC1A3A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AD28742F2A6E9D3100CC1A3A /* HUD.swift */,
+				AD28741D2A6AE7FD00CC1A3A /* Player */,
+				AD28741E2A6AE80600CC1A3A /* Enemies */,
+				AD28741B2A6AE70D00CC1A3A /* PowerUp */,
+				AD28741C2A6AE73500CC1A3A /* Background */,
+				AD2874232A6C441B00CC1A3A /* Shot */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AD2874342A6E9FCA00CC1A3A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AD2874292A6D1A8D00CC1A3A /* MenuScene.swift */,
+				AD958E252A5C1F9400EFBA65 /* GameScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		AD958E132A5C1F9400EFBA65 = {
@@ -182,16 +213,9 @@
 		AD958E1E2A5C1F9400EFBA65 /* WarBee */ = {
 			isa = PBXGroup;
 			children = (
-				AD28742F2A6E9D3100CC1A3A /* HUD.swift */,
-				AD958E1F2A5C1F9400EFBA65 /* AppDelegate.swift */,
-				AD2874292A6D1A8D00CC1A3A /* MenuScene.swift */,
-				AD958E252A5C1F9400EFBA65 /* GameScene.swift */,
-				AD28741D2A6AE7FD00CC1A3A /* Player */,
-				AD28741E2A6AE80600CC1A3A /* Enemies */,
-				AD28741B2A6AE70D00CC1A3A /* PowerUp */,
-				AD28741C2A6AE73500CC1A3A /* Background */,
-				AD2874232A6C441B00CC1A3A /* Shot */,
-				AD2874272A6C504C00CC1A3A /* Assets.swift */,
+				AD2874342A6E9FCA00CC1A3A /* Scenes */,
+				AD2874332A6E9F3500CC1A3A /* Classes */,
+				AD2874322A6E9EF600CC1A3A /* Protocols + Extensions */,
 				AD28742D2A6D7E1300CC1A3A /* Services */,
 				AD28742E2A6D7E1F00CC1A3A /* ViewControllers */,
 				AD2874312A6E9E9600CC1A3A /* SupportingFiles */,
