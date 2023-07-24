@@ -11,7 +11,6 @@ import GameplayKit
 class GameScene: SKScene {
     
     var player: PlayerPlane!
-    let deadline = DispatchTime.now() + .nanoseconds(1)
     
     let scoreBackground = SKSpriteNode(imageNamed: "scores")
     let scoreLabel = SKLabelNode(text: "1000")
@@ -59,11 +58,35 @@ class GameScene: SKScene {
     fileprivate func configureUI() {
         scoreBackground.position = CGPoint(
             x: scoreBackground.size.width + 10,
-            y: self.size.height - scoreBackground.size.height / 2 - 40
+            y: self.size.height - scoreBackground.size.height / 2 - 30
         )
         scoreBackground.anchorPoint = CGPoint(x: 1.0, y: 0.5)
         scoreBackground.zPosition = 99
         self.addChild(scoreBackground)
+        
+        scoreLabel.horizontalAlignmentMode = .right
+        scoreLabel.verticalAlignmentMode = .center
+        scoreLabel.position = CGPoint(x: -10, y: 3)
+        scoreLabel.zPosition = 100 // должен быть над scoreBackground
+        scoreLabel.fontName = "AmericanTypewriter-Bold"
+        scoreLabel.fontSize = 30
+        scoreBackground.addChild(scoreLabel)
+        
+        menuButton.position = CGPoint(x: 20, y: 20)
+        menuButton.anchorPoint = CGPoint(x: 0.0, y: 0.0)
+        menuButton.zPosition = 100
+        self.addChild(menuButton)
+        
+        let lifes = [life1, life2, life3]
+        for (index, life) in lifes.enumerated() {
+            life.position = CGPoint(
+                x: self.size.width - CGFloat(index + 1) * (life.size.width + 5),
+                y: self.size.height - 80
+            )
+            life.zPosition = 100
+            life.anchorPoint = CGPoint(x: 0.0, y: 0.0)
+            self.addChild(life)
+        }
     }
     
     //Spawn playerFire
