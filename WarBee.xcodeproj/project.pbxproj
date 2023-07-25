@@ -142,14 +142,14 @@
 			path = Atlases;
 			sourceTree = "<group>";
 		};
-		AD28742D2A6D7E1300CC1A3A /* Services */ = {
+		AD28742D2A6D7E1300CC1A3A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				AD2874272A6C504C00CC1A3A /* Assets.swift */,
 				AD28742B2A6D7DD000CC1A3A /* BitMaskCategory.swift */,
 				AD2874392A6FFFD000CC1A3A /* SceneManager.swift */,
 			);
-			path = Services;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		AD28742E2A6D7E1F00CC1A3A /* ViewControllers */ = {
@@ -225,7 +225,7 @@
 				AD2874342A6E9FCA00CC1A3A /* Scenes */,
 				AD2874332A6E9F3500CC1A3A /* Classes */,
 				AD2874322A6E9EF600CC1A3A /* Protocols + Extensions */,
-				AD28742D2A6D7E1300CC1A3A /* Services */,
+				AD28742D2A6D7E1300CC1A3A /* Managers */,
 				AD28742E2A6D7E1F00CC1A3A /* ViewControllers */,
 				AD2874312A6E9E9600CC1A3A /* SupportingFiles */,
 				AD2874262A6C44EF00CC1A3A /* Atlases */,
