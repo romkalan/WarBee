@@ -15,6 +15,13 @@ class PauseScene: SKScene {
         createButton()
     }
     
+    override func update(_ currentTime: TimeInterval) {
+        guard let gameScene = sceneManager.gameScene else { return }
+        if !gameScene.isPaused {
+            gameScene.isPaused = true
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let location = touches.first?.location(in: self) else { return }
         let node = self.atPoint(location)

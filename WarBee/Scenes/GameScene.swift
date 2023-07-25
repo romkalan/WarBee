@@ -18,6 +18,8 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        self.scene?.isPaused = false
+        
         guard sceneManager.gameScene == nil else { return }
         
         sceneManager.gameScene = self
@@ -59,6 +61,10 @@ class GameScene: SKScene {
             let transition = SKTransition.crossFade(withDuration: 1.0)
             let gameScene = PauseScene(size: self.size)
             gameScene.scaleMode = .aspectFill
+            
+            sceneManager.gameScene = self
+            self.scene?.isPaused = true
+            
             self.scene?.view?.presentScene(gameScene, transition: transition)
         } else {
             playerFire()
