@@ -13,8 +13,6 @@ class MenuScene: ParentScene {
             Assets.shared.preloadAssets()
             Assets.shared.isLoaded = true
         }
-        
-        self.backgroundColor = SKColor(red: 0.15, green: 0.15, blue: 0.3, alpha: 1.0)
         createButton()
     }
     
