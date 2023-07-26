@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-class MenuScene: SKScene {
+class MenuScene: ParentScene {
     override func didMove(to view: SKView) {
         if !Assets.shared.isLoaded {
             Assets.shared.preloadAssets()
@@ -27,13 +27,22 @@ class MenuScene: SKScene {
             let gameScene = GameScene(size: self.size)
             gameScene.scaleMode = .aspectFill
             self.scene?.view?.presentScene(gameScene, transition: transition)
+        } else if node.name == "options" {
+            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let optionsScene = OptionsScene(size: self.size)
+            optionsScene.backScene = self
+            optionsScene.scaleMode = .aspectFill
+            self.scene?.view?.presentScene(optionsScene, transition: transition)
+        } else if node.name == "best" {
+            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let gameScene = GameScene(size: self.size)
+            gameScene.scaleMode = .aspectFill
+            self.scene?.view?.presentScene(gameScene, transition: transition)
         }
     }
     
     fileprivate func createButton() {
-        let header = SKSpriteNode(imageNamed: "header1")
-        header.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 150)
-        self.addChild(header)
+        setHeader(with: nil, andBackground: "header1")
         
         let titles = ["play", "options", "best"]
         
