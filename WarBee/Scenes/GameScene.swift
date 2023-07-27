@@ -14,6 +14,27 @@ class GameScene: ParentScene {
     fileprivate let hud = HUD()
     fileprivate let screenSize = UIScreen.main.bounds.size
     
+    fileprivate var lives = 3 {
+        didSet {
+            switch lives {
+            case 3:
+                hud.life1.isHidden = false
+                hud.life2.isHidden = false
+                hud.life3.isHidden = false
+            case 2:
+                hud.life1.isHidden = false
+                hud.life2.isHidden = false
+                hud.life3.isHidden = true
+            case 1:
+                hud.life1.isHidden = false
+                hud.life2.isHidden = true
+                hud.life3.isHidden = true
+            default:
+                break
+            }
+        }
+    }
+    
     override func didMove(to view: SKView) {
         
         self.scene?.isPaused = false
@@ -214,16 +235,23 @@ extension GameScene: SKPhysicsContactDelegate {
         let explosion = SKEmitterNode(fileNamed: "EnemyExplosion")
         let contactPoint = contact.contactPoint
         explosion?.position = contactPoint
+        explosion?.zPosition = 25
         
         let waitForExplosionAction = SKAction.wait(forDuration: 1.0)
         
         let contactCategory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
         switch contactCategory {
-        case [.enemy, .player]: print("enemy vs player")
+        case [.enemy, .player]:
             if contact.bodyA.node?.name == "sprite" {
-                contact.bodyA.node?.removeFromParent()
+                if contact.bodyA.node?.parent != nil {
+                    contact.bodyA.node?.removeFromParent()
+                    lives -= 1
+                }
             } else {
-                contact.bodyB.node?.removeFromParent()
+                if contact.bodyB.node?.parent != nil {
+                    contact.bodyB.node?.removeFromParent()
+                    lives -= 1
+                }
             }
             
             addChild(explosion!)
@@ -231,7 +259,7 @@ extension GameScene: SKPhysicsContactDelegate {
                 explosion?.removeFromParent()
             }
         case [.powerUp, .player]: print("powerUp vs player")
-        case [.enemy, .shot]: print("enemy vs shot")
+        case [.enemy, .shot]:
             contact.bodyA.node?.removeFromParent()
             contact.bodyB.node?.removeFromParent()
             
