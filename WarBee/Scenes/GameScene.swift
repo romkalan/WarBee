@@ -258,6 +258,13 @@ extension GameScene: SKPhysicsContactDelegate {
             self.run(waitForExplosionAction) {
                 explosion?.removeFromParent()
             }
+            
+            if lives == 0 {
+                let transition = SKTransition.crossFade(withDuration: 1.0)
+                let gameOverScene = GameOverScene(size: self.size)
+                gameOverScene.scaleMode = .aspectFill
+                self.scene?.view?.presentScene(gameOverScene, transition: transition)
+            }
         case [.powerUp, .player]: print("powerUp vs player")
         case [.enemy, .shot]:
             contact.bodyA.node?.removeFromParent()
@@ -267,6 +274,9 @@ extension GameScene: SKPhysicsContactDelegate {
             self.run(waitForExplosionAction) {
                 explosion?.removeFromParent()
             }
+            
+            hud.score += 5
+            
         default: preconditionFailure("Unable to detect collision category")
         }
     }

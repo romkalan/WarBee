@@ -25,6 +25,7 @@
 		AD2874402A70DED500CC1A3A /* BestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD28743F2A70DED500CC1A3A /* BestScene.swift */; };
 		AD2874432A7290DD00CC1A3A /* EnemyExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD2874412A7290DD00CC1A3A /* EnemyExplosion.sks */; };
 		AD2874442A7290DD00CC1A3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD2874422A7290DD00CC1A3A /* Assets.xcassets */; };
+		AD2874472A73AE6800CC1A3A /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2874462A73AE6800CC1A3A /* GameOverScene.swift */; };
 		AD5620372A6913A200D76ED5 /* Enemy_1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AD5620362A6913A200D76ED5 /* Enemy_1.atlas */; };
 		AD5620392A6913B400D76ED5 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5620382A6913B400D76ED5 /* Enemy.swift */; };
 		AD6E49E22A5F0654004A7EE1 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E49E12A5F0654004A7EE1 /* Island.swift */; };
@@ -63,6 +64,7 @@
 		AD28743F2A70DED500CC1A3A /* BestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScene.swift; sourceTree = "<group>"; };
 		AD2874412A7290DD00CC1A3A /* EnemyExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyExplosion.sks; sourceTree = "<group>"; };
 		AD2874422A7290DD00CC1A3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD2874462A73AE6800CC1A3A /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		AD5620362A6913A200D76ED5 /* Enemy_1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_1.atlas; sourceTree = "<group>"; };
 		AD5620382A6913B400D76ED5 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		AD6E49E12A5F0654004A7EE1 /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				AD2874372A6FDD6100CC1A3A /* PauseScene.swift */,
 				AD28743D2A70DC3300CC1A3A /* OptionsScene.swift */,
 				AD28743F2A70DED500CC1A3A /* BestScene.swift */,
+				AD2874462A73AE6800CC1A3A /* GameOverScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				AD6E49E22A5F0654004A7EE1 /* Island.swift in Sources */,
 				AD2874282A6C504C00CC1A3A /* Assets.swift in Sources */,
 				AD5620392A6913B400D76ED5 /* Enemy.swift in Sources */,
+				AD2874472A73AE6800CC1A3A /* GameOverScene.swift in Sources */,
 				AD28743A2A6FFFD000CC1A3A /* SceneManager.swift in Sources */,
 				AD7D12B82A6479DF002B4055 /* GameBackgroundSpriteable.swift in Sources */,
 				AD7D12BC2A67F97C002B4055 /* PowerUp.swift in Sources */,
