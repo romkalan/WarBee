@@ -277,17 +277,37 @@ extension GameScene: SKPhysicsContactDelegate {
                 gameOverScene.scaleMode = .aspectFill
                 self.scene?.view?.presentScene(gameOverScene, transition: transition)
             }
-        case [.powerUp, .player]: print("powerUp vs player")
+        case [.powerUp, .player]:
+                       
+            if contact.bodyA.node?.parent != nil && contact.bodyA.node?.parent != nil {
+                if contact.bodyA.node?.name == "greenPowerUp" {
+                    contact.bodyA.node?.removeFromParent()
+                    lives = 3
+                    player.greenPowerUp()
+                } else if contact.bodyB.node?.name == "greenPowerUp" {
+                    contact.bodyB.node?.removeFromParent()
+                    lives = 3
+                    player.greenPowerUp()
+                }
+                
+                if contact.bodyA.node?.name == "bluePowerUp" {
+                    contact.bodyA.node?.removeFromParent()
+                    lives = 3
+                    player.bluePowerUp()
+                } else if contact.bodyB.node?.name == "bluePowerUp" {
+                    contact.bodyB.node?.removeFromParent()
+                    lives = 3
+                    player.bluePowerUp()
+                }
+            }
         case [.enemy, .shot]:
-            if contact.bodyA.node?.parent != nil || contact.bodyB.node?.parent != nil {
+            if contact.bodyA.node?.parent != nil {
                 
                 contact.bodyA.node?.removeFromParent()
                 contact.bodyB.node?.removeFromParent()
                 
                 addChild(explosion!)
-                self.run(waitForExplosionAction) {
-                    explosion?.removeFromParent()
-                }
+                self.run(waitForExplosionAction) {  explosion?.removeFromParent() }
                 
                 hud.score += 5
             }
