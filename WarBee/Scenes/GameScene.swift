@@ -65,6 +65,18 @@ class GameScene: ParentScene {
             }
         }
         
+        enumerateChildNodes(withName: "greenPowerUp") { (node, stop) in
+            if node.position.y <= -100 {
+                node.removeFromParent()
+            }
+        }
+        
+        enumerateChildNodes(withName: "bluePowerUp") { (node, stop) in
+            if node.position.y <= -100 {
+                node.removeFromParent()
+            }
+        }
+        
         enumerateChildNodes(withName: "shotSprite") { (node, stop) in
             if node.position.y >= self.size.height + 100 {
                 node.removeFromParent()
@@ -267,16 +279,18 @@ extension GameScene: SKPhysicsContactDelegate {
             }
         case [.powerUp, .player]: print("powerUp vs player")
         case [.enemy, .shot]:
-            contact.bodyA.node?.removeFromParent()
-            contact.bodyB.node?.removeFromParent()
-            
-            addChild(explosion!)
-            self.run(waitForExplosionAction) {
-                explosion?.removeFromParent()
+            if contact.bodyA.node?.parent != nil || contact.bodyB.node?.parent != nil {
+                
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+                
+                addChild(explosion!)
+                self.run(waitForExplosionAction) {
+                    explosion?.removeFromParent()
+                }
+                
+                hud.score += 5
             }
-            
-            hud.score += 5
-            
         default: preconditionFailure("Unable to detect collision category")
         }
     }
