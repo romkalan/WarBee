@@ -7,8 +7,11 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameScene: ParentScene {
+    
+    var backgroundMusic: SKAudioNode!
         
     fileprivate var player: PlayerPlane!
     fileprivate let hud = HUD()
@@ -37,6 +40,15 @@ class GameScene: ParentScene {
     
     override func didMove(to view: SKView) {
         
+        let gameSettings = GameSettings()
+        gameSettings.loadGameSettings()
+        
+        if gameSettings.isMusic && backgroundMusic == nil {
+            guard let musicURL = Bundle.main.url(forResource: "backgroundMusic", withExtension: "m4a") else { return }
+            backgroundMusic = SKAudioNode(url: musicURL)
+            addChild(backgroundMusic)
+        }
+        
         self.scene?.isPaused = false
         
         guard sceneManager.gameScene == nil else { return }
@@ -53,6 +65,7 @@ class GameScene: ParentScene {
         spawnPowerUp()
         spawnEnemies()
         createHUD()
+        
     }
     
     override func didSimulatePhysics() {
@@ -251,6 +264,8 @@ extension GameScene: SKPhysicsContactDelegate {
         
         let waitForExplosionAction = SKAction.wait(forDuration: 1.0)
         
+        let hitSoundAction = SKAction.playSoundFileNamed("hitSound", waitForCompletion: true)
+        
         let contactCategory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
         switch contactCategory {
         case [.enemy, .player]:
@@ -270,6 +285,7 @@ extension GameScene: SKPhysicsContactDelegate {
             self.run(waitForExplosionAction) {
                 explosion?.removeFromParent()
             }
+            self.run(hitSoundAction)
             
             if lives == 0 {
                 let transition = SKTransition.crossFade(withDuration: 1.0)
@@ -278,7 +294,6 @@ extension GameScene: SKPhysicsContactDelegate {
                 self.scene?.view?.presentScene(gameOverScene, transition: transition)
             }
         case [.powerUp, .player]:
-                       
             if contact.bodyA.node?.parent != nil && contact.bodyA.node?.parent != nil {
                 if contact.bodyA.node?.name == "greenPowerUp" {
                     contact.bodyA.node?.removeFromParent()
@@ -305,6 +320,11 @@ extension GameScene: SKPhysicsContactDelegate {
                 
                 contact.bodyA.node?.removeFromParent()
                 contact.bodyB.node?.removeFromParent()
+                
+                let gameSettings = GameSettings()
+                if gameSettings.isSound {
+                    self.run(SKAction.playSoundFileNamed("hitSound", waitForCompletion: false))
+                }
                 
                 addChild(explosion!)
                 self.run(waitForExplosionAction) {  explosion?.removeFromParent() }
