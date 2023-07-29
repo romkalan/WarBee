@@ -9,16 +9,25 @@ import SpriteKit
 
 class OptionsScene: ParentScene {
     
-    override func didMove(to view: SKView) {        
+    var isMusic: Bool!
+    var isSound: Bool!
+    
+    override func didMove(to view: SKView) {
+        
+        isMusic = gameSettings.isMusic
+        isSound = gameSettings.isSound
+        
         setHeader(with: "options", andBackground: "header_background")
         
-        let music = ButtonNode(titled: nil, backgroundName: "music")
+        let backgroundNameForMusic = isMusic == true ? "music" : "nomusic"
+        let music = ButtonNode(titled: nil, backgroundName: backgroundNameForMusic)
         music.position = CGPoint(x: self.frame.midX - 50, y: self.frame.midY)
         music.name = "music"
         music.label.isHidden = true
         addChild(music)
         
-        let sound = ButtonNode(titled: nil, backgroundName: "sound")
+        let backgroundNameForSound = isMusic == true ? "sound" : "nosound"
+        let sound = ButtonNode(titled: nil, backgroundName: backgroundNameForSound)
         sound.position = CGPoint(x: self.frame.midX + 50, y: self.frame.midY)
         sound.name = "sound"
         sound.label.isHidden = true

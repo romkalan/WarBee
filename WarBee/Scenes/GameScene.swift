@@ -40,7 +40,6 @@ class GameScene: ParentScene {
     
     override func didMove(to view: SKView) {
         
-        let gameSettings = GameSettings()
         gameSettings.loadGameSettings()
         
         if gameSettings.isMusic && backgroundMusic == nil {
@@ -321,7 +320,6 @@ extension GameScene: SKPhysicsContactDelegate {
                 contact.bodyA.node?.removeFromParent()
                 contact.bodyB.node?.removeFromParent()
                 
-                let gameSettings = GameSettings()
                 if gameSettings.isSound {
                     self.run(SKAction.playSoundFileNamed("hitSound", waitForCompletion: false))
                 }
