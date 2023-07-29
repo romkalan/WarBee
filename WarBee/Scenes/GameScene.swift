@@ -263,7 +263,7 @@ extension GameScene: SKPhysicsContactDelegate {
         
         let waitForExplosionAction = SKAction.wait(forDuration: 1.0)
         
-        let hitSoundAction = SKAction.playSoundFileNamed("hitSound", waitForCompletion: true)
+        let hitSoundAction = SKAction.playSoundFileNamed("hitSound", waitForCompletion: false)
         
         let contactCategory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
         switch contactCategory {
@@ -280,11 +280,12 @@ extension GameScene: SKPhysicsContactDelegate {
                 }
             }
             
+            self.run(hitSoundAction)
             addChild(explosion!)
             self.run(waitForExplosionAction) {
                 explosion?.removeFromParent()
             }
-            self.run(hitSoundAction)
+            
             
             if lives == 0 {
                 let transition = SKTransition.crossFade(withDuration: 1.0)

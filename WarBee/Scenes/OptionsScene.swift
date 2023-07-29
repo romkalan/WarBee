@@ -45,14 +45,27 @@ class OptionsScene: ParentScene {
         let node = self.atPoint(location)
 
         if node.name == "music" {
-            print("music")
+            isMusic.toggle()
+            update(node: node as! SKSpriteNode, property: isMusic)
         } else if node.name == "sound" {
-            print("sound")
+            isSound.toggle()
+            update(node: node as! SKSpriteNode, property: isMusic)
         } else if node.name == "back" {
+            gameSettings.isMusic = isMusic
+            gameSettings.isSound = isSound
+            gameSettings.saveGameSettings()
+            
             let transition = SKTransition.crossFade(withDuration: 1.0)
             guard let backScene = backScene else { return }
             backScene.scaleMode = .aspectFill
             self.scene?.view?.presentScene(backScene, transition: transition)
         }
+    }
+    
+    func update(node: SKSpriteNode, property: Bool) {
+        guard let name = node.name else { return }
+        node.texture = property
+        ? SKTexture(imageNamed: name)
+        : SKTexture(imageNamed: "no" + name)
     }
 }
