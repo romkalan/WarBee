@@ -288,6 +288,9 @@ extension GameScene: SKPhysicsContactDelegate {
             
             
             if lives == 0 {
+                gameSettings.currentScore = hud.score
+                gameSettings.saveScores()
+                
                 let transition = SKTransition.crossFade(withDuration: 1.0)
                 let gameOverScene = GameOverScene(size: self.size)
                 gameOverScene.scaleMode = .aspectFill
