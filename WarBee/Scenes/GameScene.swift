@@ -171,7 +171,9 @@ class GameScene: ParentScene {
                 let textureNames = textureAtlas.textureNames.sorted()
                 let texture = textureAtlas.textureNamed(textureNames[12])
                 let enemy = Enemy(enemyTexture: texture)
-                enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 110)
+                
+                let randomPositionX = arc4random_uniform(UInt32(self.size.width - 100))
+                enemy.position = CGPoint(x: CGFloat(randomPositionX), y: self.size.height + 110)
                 self.addChild(enemy)
                 enemy.flySpiral()
             })
