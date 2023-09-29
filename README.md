@@ -2,10 +2,12 @@
 
 This is training app-game on SpriteKit
 
-3 screens are implemented here:
+5 screens are implemented here:
 - Main Menu;
 - Game Scene;
 - Pause Scene;
+- Option Scene;
+- Game Over Scene
 
 The project also implements sound management
 
