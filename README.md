@@ -8,3 +8,7 @@ This is training app-game on SpriteKit
 - Pause Scene;
 
 The project also implements sound management
+
+## Screens
+
+## Records
